@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+<link
+rel="stylesheet"
+type="text/css"
+href="index.css"
+/>
+</head>
+<body>
+<template id="title">
+
+    _                   __                 
+    ____   ___ ____ ___/ _______ _    _____
+   / /_ /  / _ `/ _ / _  / __/ -_| |/|/ _-
+  /_//__/  \_,_/_//_\_,_/_/  \__/|__,__/___/
+                                            
+  An alarm rings and you wake to find yourself in a strange room. 
+  You have none of your usual worldly posessions... 
+  only a letter addressed simply to 'you'
+
+</template>
+
+    <script>
+        
+        $('body').terminal({
+            hello: function(){
+                this.echo('hey!');
+            },
+            read: function(object){
+                if(object == 'letter' | object == 'Letter'){
+                    this.echo("Hi Reader! Welcome to my website. My name is Iz. I'm currently a student of Illustration (with Creative Computing) at UAL Camberwell in London.\nHere you will find my current projects, ramblings and some miscellaneous junk.\nPlease peruse at your leisure.\nAny good adventure starts with a look around the room!")
+                } else{this.echo('idk how to read that')};
+            },
+            
+            i: function(){
+                this.echo('You are carrying:\nA letter');
+            },
+
+            inventory: function(){
+                this.echo('You are carrying:\nA letter');
+            },
+
+            help: function(){
+                this.echo('Avaliable commands:\nlook\ninventory\nread\nexamine\nhello')
+            },
+
+            look: function(){
+                this.echo('PECULIAR STUDY\nYou find yourself in a small study with no clear exit or entrance.\nIn the middle of the room is an antique writing desk, on which stands a trophy, a book, a painting and a notebook')
+            }
+
+
+
+
+        },{
+            greetings: title.innerHTML
+        // }, {
+        //     greetings: function(){
+        //         this.echo(title.innerHTML)
+        //         this.echo('you are standing in a small dusty room, which looks like it was once used as a study. On the desk there is a wax sealed letter addressed simply to "you"')}
+            });
+
+
+        </script>
+</body>
+</html>
+
