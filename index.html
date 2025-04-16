@@ -48,7 +48,8 @@ href="index.css"
 </template>
 
     <script>
-        
+        inventory = [];
+        inventory.push('-A letter');
         
         $('body').terminal({
             hello: function(){
@@ -61,7 +62,9 @@ href="index.css"
             },
             
             i: function(){
-                this.echo('You are carrying:\nA letter\n');
+                this.echo('You are carrying:');
+                this.echo(inventory);
+                this.echo('\n');
             },
 
             inventory: function(){
@@ -73,7 +76,7 @@ href="index.css"
             },
 
             look: function(){
-                this.echo('PECULIAR STUDY\nYou find yourself in a small study with no clear exit or entrance.\nIn the middle of the room is an antique writing desk.\nOn the desk is an origami crane, a fountain pen, and a tangled ball of string\n')
+                this.echo('PECULIAR STUDY\nYou find yourself in a small study with no clear exit or entrance.\nIn the middle of the room is an antique writing desk.\nOn the desk is an origami crane, a fountain pen, a tangled ball of string & a pair of dice\n')
             },
 
             take: function(object){
@@ -85,17 +88,33 @@ href="index.css"
                     window.location.href = "/projects.html";}
                   else if(object == 'string' | object == 'ball' | object == 'String' |object == 'Ball'){
                     window.location.href = "/dump.html";}
+                  else if(object == 'dice' | object == 'Dice'){
+                    this.echo("Taken.\n")
+                    inventory.push("-A set of dice");
                   }
-            },
+                  },
+                    
+            roll: function(object){
+                if(object == 'dice' || object == 'Dice'){
+                    let random = Math.floor(Math.random()*3) + 1;
+                    this.echo("Rolling the dice ... ... ...");
+                    switch(random){
+                        case 1:
+                        setTimeout(() => window.location.href = "/projects.html", 1500);
+                        break;
+                        case 2:
+                        setTimeout(() => window.location.href = "/blog.html", 1500);
+                        break;
+                        case 3:
+                        setTimeout(() => window.location.href = "/dump.html", 1500);
+                        break;
+                    }   
+                    } else{this.echo("I don't know how to roll that!")}
+}
 
 
-
-         {
+        },{
             greetings: title.innerHTML
-        // }, {
-        //     greetings: function(){
-        //         this.echo(title.innerHTML)
-        //         this.echo('you are standing in a small dusty room, which looks like it was once used as a study. On the desk there is a wax sealed letter addressed simply to "you"')}
             });
 
 
