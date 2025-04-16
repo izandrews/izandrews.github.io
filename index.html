@@ -13,6 +13,27 @@ href="index.css"
 />
 </head>
 <body>
+    <script>
+        $(function() {
+    const term = $('body').terminal(function(command, term) {
+        // your command logic
+        term.echo('You typed: ' + command);
+    }, {
+        history: false
+    });
+
+    // Disable mousewheel & touchpad scrolling on terminal output
+    term.find('.terminal-output').on('wheel touchmove', function(e) {
+        e.preventDefault();
+    });
+
+    // Optional: Keep output height in check so it doesn't grow
+    term.find('.terminal-output').css({
+        'overflow': 'hidden',
+        'max-height': '100%',
+    });
+});
+    </script>
 <template id="title">
 
     _                   __                 
@@ -28,36 +49,48 @@ href="index.css"
 
     <script>
         
+        
         $('body').terminal({
             hello: function(){
                 this.echo('hey!');
             },
             read: function(object){
                 if(object == 'letter' | object == 'Letter'){
-                    this.echo("Hi Reader! Welcome to my website. My name is Iz. I'm currently a student of Illustration (with Creative Computing) at UAL Camberwell in London.\nHere you will find my current projects, ramblings and some miscellaneous junk.\nPlease peruse at your leisure.\nAny good adventure starts with a look around the room!")
-                } else{this.echo('idk how to read that')};
+                    this.echo("Hi Reader! Welcome to my website.\nI'm Iz, a student of Illustration (with Creative Computing) at UAL.\nHere you will find my current projects, ramblings and some miscellaneous junk.\nPlease peruse at your leisure.\nAny good adventure starts with a look around the room!\n")
+                } else{this.echo("I can't read that!\n")};
             },
             
             i: function(){
-                this.echo('You are carrying:\nA letter');
+                this.echo('You are carrying:\nA letter\n');
             },
 
             inventory: function(){
-                this.echo('You are carrying:\nA letter');
+                this.echo('You are carrying:\nA letter\n');
             },
 
             help: function(){
-                this.echo('Avaliable commands:\nlook\ninventory\nread\nexamine\nhello')
+                this.echo('Avaliable commands:\nlook\ninventory\nread\nexamine\nhello\n')
             },
 
             look: function(){
-                this.echo('PECULIAR STUDY\nYou find yourself in a small study with no clear exit or entrance.\nIn the middle of the room is an antique writing desk, on which stands a trophy, a book, a painting and a notebook')
-            }
+                this.echo('PECULIAR STUDY\nYou find yourself in a small study with no clear exit or entrance.\nIn the middle of the room is an antique writing desk.\nOn the desk is an origami crane, a fountain pen, and a tangled ball of string\n')
+            },
+
+            take: function(object){
+                if(object == 'letter' | object == 'Letter'){
+                    this.echo("You already have that!\n")
+                } else if(object == 'pen' | object == 'Pen' | object == 'fountain pen' ){
+                    window.location.href = "/blog.html";}
+                  else if(object == 'crane' | object == 'origami' | object == 'Crane' | object == 'Origami'){
+                    window.location.href = "/projects.html";}
+                  else if(object == 'string' | object == 'ball' | object == 'String' |object == 'Ball'){
+                    window.location.href = "/dump.html";}
+                  }
+            },
 
 
 
-
-        },{
+         {
             greetings: title.innerHTML
         // }, {
         //     greetings: function(){

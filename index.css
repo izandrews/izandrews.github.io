@@ -9,21 +9,28 @@
     --size: 1.5;
     background-color: #0000aa;
     color: #8b8baa;
-    padding-left: 80px;
+    padding-left: 40px;
+    /* padding-right: 80px; */
+    padding-bottom: 40px;}
+
+.body{
     padding-right: 80px;
 }
 
-.cmd {
+ /* .terminal {
+    overflow: hidden !important;
+    height: 100% !important;
+  }
+      
+.terminal .terminal-output {
+    overflow: hidden !important;
+    max-height: 100% !important;
+} */
+
+/* .cmd {
     position: absolute !important;
     bottom: 10px;
     right: 10px;
     left: 10px;
     width: auto !important;
-}
-.terminal {
-    overflow-y: hidden;
-}
-.terminal .terminal-output {
-    max-height: calc(100% - 15px);
-    overflow-y: auto;
-}
+} */
