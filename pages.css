@@ -56,9 +56,8 @@ body {
 
   .mobile-title {
     display: block;
-    width: min(90vw, 420px);
+    width: 100vw;
     height: auto;
     margin: 0 auto;
-    padding: 6vw 6vw 0 4vw;
   }
 }
