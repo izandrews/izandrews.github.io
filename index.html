@@ -76,7 +76,7 @@ href="index.css"
             },
 
             help: function(){
-                this.echo('Avaliable commands:\nlook\ninventory\nread\n\nhello\n')
+                this.echo('Avaliable commands:\nlook\ninventory\nread\n\nhello\nroll\n')
             },
 
             look: function(){
@@ -86,7 +86,7 @@ href="index.css"
             take: function(object){
                 if(object == 'letter' | object == 'Letter'){
                     this.echo("You already have that!\n")
-                } else if(object == 'teddy' | object == 'teddy bear' | object == 'worn teddy'| object == 'worn teddy bear'| object == 'Teddy' | object == 'Teddy Bear'){
+                } else if(object == 'teddy' | object == 'teddy bear' | object == 'worn teddy'| object == 'worn teddy bear'| object == 'Teddy' | object == 'Teddy Bear'| object == 'bear'| object == 'Bear'){
                     window.location.href = "/qoa.html";}
                   else if(object == 'gadget' | object == 'strange gadget' | object == 'Gadget' | object == 'Strange Gadget'){
                     window.location.href = "/ispy.html";}
@@ -104,13 +104,13 @@ href="index.css"
                     this.echo("Rolling the dice ... ... ...");
                     switch(random){
                         case 1:
-                        setTimeout(() => window.location.href = "/projects.html", 1500);
+                        setTimeout(() => window.location.href = "/qoa.html", 1500);
                         break;
                         case 2:
-                        setTimeout(() => window.location.href = "/blog.html", 1500);
+                        setTimeout(() => window.location.href = "/ispy.html", 1500);
                         break;
                         case 3:
-                        setTimeout(() => window.location.href = "/dump.html", 1500);
+                        setTimeout(() => window.location.href = "/sowwhat.html", 1500);
                         break;
                     }   
                     } else{this.echo("I don't know how to roll that!")}
