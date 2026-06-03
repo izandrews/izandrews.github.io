@@ -13,26 +13,27 @@ href="index.css"
 />
 </head>
 <body>
+<div id="terminal"></div>
     <script>
-        $(function() {
-    const term = $('body').cmd(function(command, term) {
+ //       $(function() {
+ //   const term = $('body').cmd(function(command, term) {
         // your command logic
-        term.echo('You typed: ' + command);
-    }, {
-        history: false
-    });
+ //       term.echo('You typed: ' + command);
+ //   }, {
+ //       history: false
+ //   });
 
     // Disable mousewheel & touchpad scrolling on terminal output
-    term.find('.terminal-output').on('wheel touchmove', function(e) {
-        e.preventDefault();
-    });
+ //   term.find('.terminal-output').on('wheel touchmove', function(e) {
+  //      e.preventDefault();
+  //  });
 
     // Optional: Keep output height in check so it doesn't grow
-    term.find('.terminal-output').css({
-        'overflow': 'hidden',
-        'max-height': '100%',
-    });
-});
+ //   term.find('.terminal-output').css({
+ //       'overflow': 'hidden',
+ //       'max-height': '100%',
+ //   });
+//});
     </script>
 <template id="title">
 
@@ -116,9 +117,11 @@ href="index.css"
 }
 
 
+
         },{
             greetings: title.innerHTML
             });
+            
 
 
         </script>
