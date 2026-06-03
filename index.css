@@ -47,7 +47,7 @@ body {
 @media (max-width: 600px) {
   #mobile-title {
     display: block;
-    padding: 4vw 4vw 0 4vw;
+    padding: 6vw 6vw 0 4vw;
     background-color: #0000aa;
   }
 
@@ -56,6 +56,8 @@ body {
     width: min(90vw, 420px);
     height: auto;
     margin-bottom: 1rem;
+    padding: 6vw 6vw 0 4vw;
+    
   }
 
   .terminal {
