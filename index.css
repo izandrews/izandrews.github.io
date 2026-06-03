@@ -16,4 +16,12 @@ body{
     /* padding-right: 80px; */
     padding-bottom: 5vw;}
 
+.terminal,
+.terminal-output,
+.cmd,
+.cmd span,
+.terminal .terminal-output div {
+    background-color: #0000aa !important;
+}
+
 
