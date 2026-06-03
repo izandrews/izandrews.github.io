@@ -1,64 +1,80 @@
 @font-face {
-    font-family: DOSfont;
-    src: url(MorePerfectDOSVGA.ttf);
+  font-family: DOSfont;
+  src: url(MorePerfectDOSVGA.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #0000aa;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#mobile-title {
+  display: none;
+}
+
+.terminal {
+  --font: DOSfont;
+  background-color: #0000aa;
+  color: #8b8baa;
+}
+
+.terminal,
+.terminal-output,
+.cmd,
+.cmd span,
+.terminal .terminal-output div {
+  background-color: #0000aa !important;
+}
+
+@media (min-width: 601px) {
+  .terminal {
+    --size: 1.5;
+    padding-left: 5vw;
+    padding-bottom: 5vw;
+  }
+}
+
+@media (max-width: 600px) {
+  #mobile-title {
+    display: block;
+    padding: 4vw 4vw 0 4vw;
+    background-color: #0000aa;
   }
 
-.mobile_title { display: none; }
+  #mobile-title img {
+    display: block;
+    width: min(90vw, 420px);
+    height: auto;
+    margin-bottom: 1rem;
+  }
 
-  @media (min-width: 601px) {
+  .terminal {
+    --size: 1;
+    width: 100vw;
+    max-width: 100vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-bottom: 5vw;
+    overflow-x: hidden;
+  }
 
-      body{
-        background-color: #0000aa;
-      }
-      .terminal {
-          --font: DOSfont;
-          /* font-size: 1; */
-          --size: 1.5;
-          background-color: #0000aa;
-          color: #8b8baa;
-          padding-left: 5vw;
-          /* padding-right: 80px; */
-          padding-bottom: 5vw;}
-
-      .terminal,
-      .terminal-output,
-      .cmd,
-      .cmd span,
-      .terminal .terminal-output div {
-          background-color: #0000aa !important;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .desktop_title { display: none; }
-      .mobile_title { display: block; }
-
-      .mobile_title {
-        display: block;
-        width: min(90vw, 420px);
-        height: auto;
-        margin-bottom: 1rem;
-      }
-
-      body{
-        background-color: #0000aa;
-      }
-      .terminal {
-          --font: DOSfont;
-          /* font-size: 1; */
-          --size: 1;
-          background-color: #0000aa;
-          color: #8b8baa;
-          padding-left: 4vw;
-          /* padding-right: 80px; */
-          padding-bottom: 5vw;}
-
-      .terminal,
-      .terminal-output,
-      .cmd,
-      .cmd span,
-      .terminal .terminal-output div {
-          background-color: #0000aa !important;
-      }
-    }
-
+  .terminal,
+  .terminal-output,
+  .cmd,
+  .cmd span,
+  .terminal .terminal-output div {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}

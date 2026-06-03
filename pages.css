@@ -44,3 +44,19 @@ body {
     display: block;
     border-radius: 8px;
 }
+
+.mobile-title {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .desktop-title {
+    display: none;
+  }
+
+  .mobile-title {
+    display: block;
+    width: min(90vw, 420px);
+    height: auto;
+  }
+}
