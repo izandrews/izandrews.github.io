@@ -15,7 +15,7 @@ href="index.css"
 <body>
     <script>
         $(function() {
-    const term = $('body').terminal(function(command, term) {
+    const term = $('body').cmd(function(command, term) {
         // your command logic
         term.echo('You typed: ' + command);
     }, {
@@ -45,6 +45,9 @@ href="index.css"
   You have none of your usual worldly posessions... 
   only a letter addressed simply to 'you'
 
+  - this website is based off my favourite infocom games. 
+  - if you are unsure, type help for available commands
+
 </template>
 
     <script>
@@ -57,7 +60,7 @@ href="index.css"
             },
             read: function(object){
                 if(object == 'letter' | object == 'Letter'){
-                    this.echo("Hi Reader! Welcome to my website.\nI'm Iz, a student of Illustration (with Creative Computing) at UAL.\nHere you will find my current projects, ramblings and some miscellaneous junk.\nPlease peruse at your leisure.\nAny good adventure starts with a look around the room!\n")
+                    this.echo("Hi Reader! Welcome to my website.\nI'm Iz, a student of Interaction Design Arts (with Creative Computing) at UAL.\nHere you will find my current projects.\nPlease peruse at your leisure.\n If you would like to get in touch about my work, please email: isabelcandrews@outlook.com\n Any good adventure starts with a look around the room!\n")
                 } else{this.echo("I can't read that!\n")};
             },
             
@@ -76,18 +79,18 @@ href="index.css"
             },
 
             look: function(){
-                this.echo('PECULIAR STUDY\nYou find yourself in a small study with no clear exit or entrance.\nIn the middle of the room is an antique writing desk.\nOn the desk is an origami crane, a fountain pen, a tangled ball of string & a pair of dice\n')
+                this.echo('PECULIAR STUDY\nYou find yourself in a small study with no clear exit or entrance.\nIn the middle of the room is an antique writing desk.\nOn the desk is a worn teddy bear, a jar of seeds, a strange gadget & a pair of dice\n')
             },
 
             take: function(object){
                 if(object == 'letter' | object == 'Letter'){
                     this.echo("You already have that!\n")
-                } else if(object == 'pen' | object == 'Pen' | object == 'fountain pen' ){
-                    window.location.href = "/blog.html";}
-                  else if(object == 'crane' | object == 'origami' | object == 'Crane' | object == 'Origami'){
-                    window.location.href = "/projects.html";}
-                  else if(object == 'string' | object == 'ball' | object == 'String' |object == 'Ball'){
-                    window.location.href = "/dump.html";}
+                } else if(object == 'teddy' | object == 'teddy bear' | object == 'worn teddy'| object == 'worn teddy bear'| object == 'Teddy' | object == 'Teddy Bear'){
+                    window.location.href = "/qoa.html";}
+                  else if(object == 'gadget' | object == 'strange gadget' | object == 'Gadget' | object == 'Strange Gadget'){
+                    window.location.href = "/ispy.html";}
+                  else if(object == 'jar' | object == 'seeds' | object == 'jar of seeds' |object == 'Jar of Seeds'){
+                    window.location.href = "/sowwhat.html";}
                   else if(object == 'dice' | object == 'Dice'){
                     this.echo("Taken.\n")
                     inventory.push("-A set of dice");

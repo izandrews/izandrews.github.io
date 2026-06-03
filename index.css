@@ -3,14 +3,17 @@
     src: url(MorePerfectDOSVGA.ttf);
   }
 
-
+body{
+  background-color: #0000aa;
+}
 .terminal {
     --font: DOSfont;
+    /* font-size: 1; */
     --size: 1.5;
     background-color: #0000aa;
     color: #8b8baa;
-    padding-left: 40px;
+    padding-left: 5vw;
     /* padding-right: 80px; */
-    padding-bottom: 40px;}
+    padding-bottom: 5vw;}
 
 
