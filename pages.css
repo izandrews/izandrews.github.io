@@ -58,5 +58,6 @@ body {
     display: block;
     width: min(90vw, 420px);
     height: auto;
+    margin: 0 auto;
   }
 }
